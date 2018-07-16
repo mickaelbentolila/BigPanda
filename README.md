@@ -33,4 +33,5 @@ When the program is running, to get the count of event for an event type enter h
   Improvements:
   - Create interface class 
   - Divide in subproject Model, Http and Processing to have different jar
+  - Add tests
   
