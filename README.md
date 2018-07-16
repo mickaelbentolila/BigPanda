@@ -11,7 +11,6 @@ You are provided with a blackbox executable that spits out an infinite stream of
 Please note that the stream might sometimes encounter errors and output corrupt JSON lines.
 
 Service Requirements
-
 It should consume the output of the generator and gather the following stats:
 A count of events by event type.
 A count of words encountered in the data field of the events. (e.g. “the” → 32, “me” → 5)
@@ -19,9 +18,6 @@ It should expose these stats in an HTTP interface
 
 
 Important Notes:
-
-
-
 We are looking for simple readable code which is not over-engineered
 The architecture of your service should obviously decouple the data processing, HTTP handling, be testable, etc.
 You can implement this exercise in either Java or Scala
@@ -33,3 +29,8 @@ To install you just need to do a maven install.
 Commamd line to launch: java -jar StreamService-0.0.1-SNAPSHOT.jar bigpanda.StreamService -gen <generatorPath>
 
 When the program is running, to get the count of event for an event type enter http://localhost:8080/eventType?type=<eventType> (for example http://localhost:8080/eventType?type=baz) and to get the count of a word enter http://localhost:8080/eventWord?word=<word> (for example http://localhost:8080/eventWord?word=lorem)
+  
+  Improvements:
+  - Create interface class 
+  - Divide in subproject Model, Http and Processing to have different jar
+  
